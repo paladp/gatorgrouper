@@ -46,7 +46,10 @@
               <a class="btn-md btn btn-primary btn-space" href="#">Home</a>
           </li>
           <li class="nav-item">
-              <a class="btn-md btn btn-primary btn-space" href="{% url 'logout' %}">Log Out</a>
+              <a class="btn-md btn btn-success btn-space" href="{% url 'profile-main' %}">Profile</a>
+          </li>
+          <li class="nav-item">
+              <a class="btn-md btn btn-dark btn-space" href="{% url 'logout' %}">Log Out</a>
           </li>
         </ul>
       {% else %}
@@ -54,13 +57,13 @@
           <li class="nav-item">
               <a class="btn-md btn btn-primary btn-space" href="#">Home</a>
           </li>
-          </li>
           <li class="nav-item">
             <a class="btn btn-md btn-social btn-github btn-space" href="{% url 'social:begin' 'github' %}"><span class="fab fa-github img-fluid"></span>Log In With GitHub</a>
           </li>
           <li class="nav-item">
              <a class="btn btn-md btn-social btn-google btn-space" href="{% url 'social:begin' 'google-oauth2' %}"> <span class="fab fa-google img-fluid"></span> Log In With Google</a>
           </li>
+
         </ul>
       {% endif %}
 

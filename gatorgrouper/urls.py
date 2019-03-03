@@ -13,5 +13,7 @@ urlpatterns = [
     path('assignments', views.assignments, name='Gatorgrouper-assignments'),
     path('survey', views.survey, name='Gatorgrouper-survey'),
     path('group-result', views.groupResult, name='Gatorgrouper-groups'),
-    path("logout", views.logout_view, name='logout')
+    path('logout', views.logout_view, name='logout'),
+    path('profile-main', views.profile, name='profile-main')
+
     ]
