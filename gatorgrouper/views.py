@@ -1,8 +1,8 @@
 """ This is undocumented """
 from django.shortcuts import render
 from django.template import loader
-
-from django.http import HttpResponse
+from django.contrib.auth import logout
+from django.http import HttpResponseRedirect
 # from django.http import Http404
 from .models import Professor, Semester_Class
 
@@ -38,3 +38,9 @@ def survey(request):
 
 def groupResult(request):
     return render(request, 'gatorgrouper/viewing-groups.html', {'title': 'Group Result'})
+
+
+# TODO: need to change the link
+def logout_view(request):
+    logout(request)
+    return HttpResponseRedirect("http://127.0.0.1:8000")
