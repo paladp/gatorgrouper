@@ -6,6 +6,7 @@ from utils import group_random
 from utils import constants
 
 
+
 def test_parse_arguments1():
     """General testing of arguments - if arguments exists"""
     args = []
