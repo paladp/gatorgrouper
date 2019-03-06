@@ -26,8 +26,11 @@ def read_csv_data(filepath):
             for value in record[1:]:
                 if value == "True":
                     temp.append(True)
-                elif value == "False":
-                    temp.append(False)
+                else:
+                    try:
+                       temp.append(float(value))
+                    except ValueError: # value cannot be converted to float
+                        pass
             responses.append(temp)
     else:
         for record in csvdata:
