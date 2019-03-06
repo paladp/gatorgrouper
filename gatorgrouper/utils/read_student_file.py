@@ -28,7 +28,7 @@ def read_csv_data(filepath):
                     temp.append(True)
                 else:
                     try:
-                      temp.append(float(value))
+                       temp.append(float(value))
                     except ValueError:  # value cannot be converted to float
                         pass
             responses.append(temp)
