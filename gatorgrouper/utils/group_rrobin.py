@@ -13,19 +13,22 @@ def group_rrobin_group_size(responses, grpsize):
     groups = list()  # // integer div
     numgrps = len(responses) // grpsize
     logging.info("target groups: %d", numgrps)
+
     for _ in range(numgrps):
         groups.append(list())
 
+    logging.info("Groups looks like: " + str(groups))
     # setup cyclical group target
     indices = list(range(0, numgrps))
     target_group = itertools.cycle(indices)
 
+    logging.info(responses)
     # randomize the order in which the columns will be drained
     columns = list()
     for col in range(1, len(responses[0])):
         columns.append(col)
     random.shuffle(columns)
-    logging.info("column priority: %d", columns)
+    logging.info("Columns looks like:" + str(columns))
 
     # iterate through the response columns
     for col in columns:
@@ -42,8 +45,6 @@ def group_rrobin_group_size(responses, grpsize):
     # scoring and return
     scores, ave = [], 0
     scores, ave = group_scoring.score_groups(groups)
-    logging.info("scores: %d", scores)
-    logging.info("average: %d", ave)
     return groups
 
 
